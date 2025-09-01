@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Start Session</title>
+  <!-- ✅ Load the global style -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Start Session</h1>
+
+    <!-- ✅ Navbar -->
+    <div class="navbar">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/session/start">Start Session</a>
+      <a href="/logs">Logs</a>
+      <a href="/resources">Resources</a>
+      <a href="/analytics">Analytics</a>
+    </div>
+
+    <!-- ✅ The actual form -->
+    <div class="card">
+      <form method="post">
+        <label>Pick Resource (from DB):</label>
+        <select name="resource_id">
+          <option value="">-- None / Enter manually --</option>
+          {% for r in resources %}
+            <option value="{{ r.id }}">{{ r.name }} ({{ r.type }})</option>
+          {% endfor %}
+        </select><br><br>
+
+        <label>Or Enter Custom Resource:</label><br>
+        <input type="text" name="custom_name" placeholder="Resource name"><br>
+        <input type="url" name="custom_link" placeholder="Resource link (optional)"><br><br>
+
+        <label>Custom Resource Type:</label>
+        <select name="custom_type"> <!-- ✅ fixed "Select type" to actual field -->
+          <option value="video">Video</option>
+          <option value="book">Book</option>
+          <option value="notebook">Notebook</option>
+          <option value="kaggle">Kaggle</option>
+          <option value="code">Code</option>
+          <option value="project">Project</option>
+        </select><br><br>
+
+        <label>Mode:</label>
+        <select name="mode">
+          <option value="watch">Watch</option>
+          <option value="read">Read</option>
+          <option value="code">Code</option>
+          <option value="other">Other</option>
+        </select><br><br>
+
+        <label>Goal:</label>
+        <input type="text" name="goal"><br><br>
+
+        <label>Time Allocated (minutes):</label>
+        <input type="number" name="time_allocated" value="30"><br><br>
+
+        <button class="btn" type="submit">▶ Start</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

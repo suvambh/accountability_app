@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Dashboard</h1>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/session/start">Start Session</a>
+      <a href="/logs">Logs</a>
+      <a href="/resources">Resources</a>
+      <a href="/analytics">Analytics</a>
+    </div>
+
+    {% if user %}
+      <div class="card">
+        <p><strong>User:</strong> {{ user.name }} | XP: {{ user.xp }} | Level: {{ user.level }}</p>
+      </div>
+    {% else %}
+      <div class="card">
+        <p>No user found. Please create one.</p>
+      </div>
+    {% endif %}
+
+    <!-- 🚀 Start Session -->
+    <div class="card">
+      <a class="btn" href="/session/start">▶ Start New Session</a>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="cards">
+      <button class="btn" onclick="toggleSection('logs')">📑 Recent Logs</button>
+      <button class="btn" onclick="toggleSection('resources')">📚 Resources</button>
+      <button class="btn" onclick="toggleSection('notes')">📝 Notes</button>
+      <a class="btn" href="/analytics">📊 Analytics</a>
+    </div>
+
+    <!-- Logs Section -->
+    <div id="logs" class="hidden card">
+      <h2>Recent Logs</h2>
+      <ul>
+        {% for log in logs %}
+          <li onclick="toggleDetails('log-{{ log.id }}')">
+            <strong>{{ log.date }}</strong> — {{ log.resource.name if log.resource else "Unknown" }} ({{ log.mode }})
+            <div id="log-{{ log.id }}" class="hidden">
+              Goal: {{ log.goal }}<br>
+              Time: {{ log.time_allocated }} mins<br>
+              Completion: {{ log.completion_percent }}%<br>
+              Outcome: {{ log.outcome }}<br>
+              XP: {{ log.xp_earned }}
+              {% if log.notes_file %}
+                <br><a href="/{{ log.notes_file }}" target="_blank">📄 Notes</a>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Resources Section -->
+    <div id="resources" class="hidden card">
+      <h2>Resources</h2>
+      <ul>
+        {% for r in resources %}
+          <li>{{ r.name }} ({{ r.type }})</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Notes Section -->
+    <div id="notes" class="hidden card">
+      <h2>Uploaded Notes</h2>
+      <ul>
+        {% for log in logs %}
+          {% if log.notes_file %}
+            <li>
+              <a href="/{{ log.notes_file }}" target="_blank">Notes</a> — {{ log.resource.name if log.resource else "Unknown" }}
+            </li>
+          {% endif %}
+        {% else %}
+          <li>No notes uploaded yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails(id) {
+      document.getElementById(id).classList.toggle("hidden");
+    }
+    function toggleSection(id) {
+      document.querySelectorAll('#logs, #resources, #notes').forEach(div => div.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

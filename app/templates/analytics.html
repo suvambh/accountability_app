@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="analytics-page">
+  <div class="container">
+    <h1>📊 Analytics Dashboard</h1>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="/dashboard">⬅ Dashboard</a>
+      <a href="/session/start">Start Session</a>
+      <a href="/resources">Resources</a>
+      <a href="/analytics">Analytics</a>
+    </div>
+
+    <!-- Overview -->
+    <div class="cards">
+      <div class="card">
+        Total Time Invested<br>
+        {{ total_time }} min (≈ {{ (total_time / 60) | round(1) }} h)
+      </div>
+      <div class="card">
+        Average Session<br>
+        {{ avg_session | round(1) }} min
+      </div>
+    </div>
+
+    <!-- Where My Time Goes -->
+    <h2>Where My Time Goes</h2>
+    <div class="charts-row">
+      <div class="chart-container">
+        <h3>Time by Resource Type</h3>
+        <canvas id="timeByTypeChart"></canvas>
+      </div>
+    </div>
+
+    <!-- How I Work -->
+    <h2>How I Work</h2>
+    <div class="charts-row">
+      <div class="chart-container">
+        <h3>Session Length Distribution</h3>
+        <canvas id="sessionLengthChart"></canvas>
+      </div>
+    </div>
+
+    <!-- My Progress -->
+    <h2>My Progress</h2>
+    <div class="charts-row">
+      <div class="chart-container">
+        <h3>XP Growth Over Time</h3>
+        <canvas id="xpGrowthChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Time by type (pie chart)
+    const timeByTypeData = {{ time_by_type | tojson }};
+    const ctx1 = document.getElementById('timeByTypeChart');
+    new Chart(ctx1, {
+      type: 'pie',
+      data: {
+        labels: Object.keys(timeByTypeData),
+        datasets: [{
+          data: Object.values(timeByTypeData),
+          backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0']
+        }]
+      }
+    });
+
+    // Session length histogram
+    const sessionLengths = {{ session_lengths | tojson }};
+    const bins = [0,30,60,90,120,150,180];
+    const counts = Array(bins.length-1).fill(0);
+    sessionLengths.forEach(len => {
+      for (let i=0; i<bins.length-1; i++) {
+        if (len >= bins[i] && len < bins[i+1]) {
+          counts[i]++;
+          break;
+        }
+      }
+    });
+    const labels = bins.slice(0,-1).map((b,i) => `${bins[i]}-${bins[i+1]} min`);
+    const ctx2 = document.getElementById('sessionLengthChart');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Number of Sessions',
+          data: counts,
+          backgroundColor: '#36A2EB'
+        }]
+      },
+      options: { scales: { y: { beginAtZero: true } } }
+    });
+
+    // XP Growth Over Time
+    const xpLabels = {{ xp_labels | tojson }};
+    const xpValues = {{ xp_values | tojson }};
+    const ctx3 = document.getElementById('xpGrowthChart');
+    new Chart(ctx3, {
+      type: 'line',
+      data: {
+        labels: xpLabels,
+        datasets: [{
+          label: 'XP Earned per Day',
+          data: xpValues,
+          borderColor: '#FF6384',
+          backgroundColor: 'rgba(255,99,132,0.2)',
+          fill: true,
+          tension: 0.2
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>

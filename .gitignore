@@ -1,0 +1,32 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# ---- Virtual Environment ----
+venv/
+.env/
+*.env
+
+# ---- Databases ----
+*.db
+*.sqlite3
+
+# ---- Uploads ----
+uploads/
+
+# ---- Logs ----
+*.log
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# ---- Build / Dist ----
+dist/
+build/
+*.egg-info/

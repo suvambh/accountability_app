@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Active Session</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⏱ Active Session</h1>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/session/start">Start New</a>
+      <a href="/resources">Resources</a>
+      <a href="/analytics">Analytics</a>
+    </div>
+
+    <!-- Session Info -->
+    <div class="card">
+      <h2>{{ log.resource.name }}</h2>
+      <p><strong>Mode:</strong> {{ log.mode }}</p>
+      <p><strong>Goal:</strong> {{ log.goal }}</p>
+
+      {% if log.resource.link %}
+        <p>
+          <a class="btn" href="{{ log.resource.link }}" target="_blank">📖 Open Resource</a>
+        </p>
+      {% endif %}
+
+      <p><strong>Timer:</strong> <span id="clock">00:00</span></p>
+
+      <button class="btn" onclick="window.location.href='/session/finish/{{ log.id }}'">✅ Finish Session</button>
+    </div>
+  </div>
+
+  <script>
+  let startTime = Date.now();
+  let estimatedMinutes = {{ log.time_allocated }};
+  let estimatedSeconds = estimatedMinutes * 60;
+
+  // ✅ Auto-open resource link if it exists
+  {% if log.resource.link %}
+    window.open("{{ log.resource.link }}", "_blank");
+  {% endif %}
+
+  let interval = setInterval(function() {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+
+    if (elapsed >= estimatedSeconds) {
+      clearInterval(interval);
+      alert("⏱ Time allocated finished!");
+      window.location.href = "/session/finish/{{ log.id }}";
+      return;
+    }
+
+    const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
+    const s = String(elapsed % 60).padStart(2, '0');
+    document.getElementById("clock").innerText = m + ":" + s;
+  }, 1000);
+  </script>
+</body>
+</html>

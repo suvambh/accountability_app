@@ -1,0 +1,48 @@
+name,type,link,chapter_number,duration,details
+Lesson 1 - Getting Started,video,https://www.youtube.com/watch?v=8SF_h3xF3cE&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=1,1,82,Part 1
+Lesson 2 - Deployment,video,https://www.youtube.com/watch?v=F4tvM4Vb3A0&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=2,2,76,Part 1
+Lesson 3 - Neural Net Foundations,video,https://www.youtube.com/watch?v=hBBOjCiFcuo&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=3,3,90,Part 1
+Lesson 4 - Natural Language (NLP),video,https://www.youtube.com/watch?v=toUgBQv1BT8&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=4,4,94,Part 1
+Lesson 5 - From-Scratch Model,video,https://www.youtube.com/watch?v=_rXzeWq4C6w&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=5,5,102,Part 1
+Lesson 6 - Random Forests,video,https://www.youtube.com/watch?v=AdhG64NF76E&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=6,6,102,Part 1
+Lesson 7 - Collaborative Filtering,video,https://www.youtube.com/watch?v=p4ZZq0736Po&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=7,7,106,Part 1
+Lesson 8 - Convolutions (CNNs),video,https://www.youtube.com/watch?v=htiNBPxcXgo&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=8,8,96,Part 1
+Lesson 9 - Stable Diffusion,video,https://www.youtube.com/watch?v=_7rMfsA24Ls&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=1,9,135,Part 2
+Lesson 10 - Diving Deeper,video,https://www.youtube.com/watch?v=6StU6UtZEbU&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=2,10,109,Part 2
+Lesson 11 - Matrix Multiplication,video,https://www.youtube.com/watch?v=Tf-8F5q8Xww&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=3,11,108,Part 2
+Lesson 12 - Accelerating Deep Learning,video,https://www.youtube.com/watch?v=_xIzPbCgutY&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=4,12,110,Part 2
+Lesson 13 - Transformers,video,https://www.youtube.com/watch?v=vGdB4eI4KBs&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=5,13,106,Part 2
+Lesson 14 - RNNs,video,https://www.youtube.com/watch?v=veqj0DsZSXU&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=6,14,109,Part 2
+Lesson 15 - Autoencoders,video,https://www.youtube.com/watch?v=0Hi2r4CaHvk&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=7,15,97,Part 2
+Lesson 16 - Learner Framework,video,https://www.youtube.com/watch?v=9YZaYjRKuEc&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=8,16,85,Part 2
+Lesson 17 - Initialization/Normalization,video,https://www.youtube.com/watch?v=vGsc_NbU7xc&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=9,17,116,Part 2
+Lesson 18 - Accelerated SGD,video,https://www.youtube.com/watch?v=nlVOG2Nzc3k&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=10,18,125,Part 2
+Lesson 19 - DDPM,video,https://www.youtube.com/watch?v=ItyO8s48zdc&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=11,19,90,Part 2
+Lesson 20 - Mixed Precision,video,https://www.youtube.com/watch?v=PdNHkTLU2oQ&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=12,20,105,Part 2
+Lesson 21 - DDIM,video,https://www.youtube.com/watch?v=PXiD7ZjOKhA&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=13,21,115,Part 2
+Lesson 22 - Karras 2022,video,https://www.youtube.com/watch?v=6Bta1tXRUfM&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=14,22,86,Part 2
+Lesson 23 - Super-resolution,video,https://www.youtube.com/watch?v=z1In7QaG0fg&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=15,23,100,Part 2
+Lesson 24 - Attention & Transformers,video,https://www.youtube.com/watch?v=DH5bp6zTPB4&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=16,24,115,Part 2
+Lesson 25 - Latent Diffusion,video,https://www.youtube.com/watch?v=8AgZ9jcQ9v8&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=17,25,98,Part 2
+Bonus Lesson 9A,video,https://www.youtube.com/watch?v=0_BBRNYInx8&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=18,9,41,Bonus
+Bonus Lesson 9B,video,https://www.youtube.com/watch?v=mYpjmM7O-30&list=PLfYUBJiXbdtRUvTUYpLdfHHp9a58nWVXP&index=19,9,51,Bonus
+Chapter 1 - Intro,book,,,,"Book"
+Chapter 2 - Production,book,,,,"Book"
+Chapter 3 - Ethics,book,,,,"Book"
+Chapter 4 - MNIST Basics,book,,,,"Book"
+Chapter 5 - Pet Breeds,book,,,,"Book"
+Chapter 6 - Multi-Category,book,,,,"Book"
+Chapter 7 - Sizing and TTA,book,,,,"Book"
+Chapter 8 - Collab,book,,,,"Book"
+Chapter 9 - Tabular,book,,,,"Book"
+Chapter 10 - NLP,book,,,,"Book"
+Chapter 11 - Mid-Level API,book,,,,"Book"
+Chapter 12 - NLP Deep-Dive,book,,,,"Book"
+Chapter 13 - Convolutions,book,,,,"Book"
+Chapter 14 - Resnet,book,,,,"Book"
+Chapter 15 - Arch Details,book,,,,"Book"
+Chapter 16 - Optimizers and Callbacks,book,,,,"Book"
+Chapter 17 - Foundations,book,,,,"Book"
+Chapter 18 - GradCAM,book,,,,"Book"
+Chapter 19 - Learner,book,,,,"Book"
+Chapter 20 - Conclusion,book,,,,"Book"

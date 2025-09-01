@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resources</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Resources</h1>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/session/start">Start Session</a>
+      <a href="/logs">Logs</a>
+      <a href="/resources">Resources</a>
+      <a href="/analytics">Analytics</a>
+    </div>
+
+    <!-- Resources Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Link</th>
+          <th>Chapter</th>
+          <th>Duration (min)</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in resources %}
+        <tr>
+          <td>{{ r.name }}</td>
+          <td>{{ r.type }}</td>
+          <td>
+            {% if r.link %}
+              <a href="{{ r.link }}" target="_blank">🔗 Open</a>
+            {% else %}
+              —
+            {% endif %}
+          </td>
+          <td>{{ r.chapter_number or "-" }}</td>
+          <td>{{ r.duration or "-" }}</td>
+          <td>{{ r.details or "-" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

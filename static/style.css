@@ -1,0 +1,129 @@
+/* ===== Base Styling ===== */
+body {
+  font-family: "Fira Code", Consolas, monospace;
+  margin: 0;
+  padding: 20px;
+  background: #0d1117; /* dark terminal background */
+  color: #c9d1d9;      /* soft gray text */
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #58a6ff; /* bright cyan for headers */
+}
+
+a {
+  text-decoration: none;
+  color: #58a6ff;
+}
+a:hover {
+  text-decoration: underline;
+  color: #79c0ff;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #161b22; /* dark gray */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(88, 166, 255, 0.2); /* subtle neon glow */
+  margin: 15px 0;
+}
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card h3 {
+  margin-top: 0;
+  color: #ffa657; /* amber accent */
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+  background: #238636; /* terminal green */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+button:hover, .btn:hover {
+  background: #2ea043;
+}
+
+/* ===== Navigation Bar ===== */
+.navbar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.navbar a {
+  background: #21262d;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #c9d1d9;
+  transition: 0.2s ease-in-out;
+}
+.navbar a:hover {
+  background: #30363d;
+  color: #58a6ff;
+}
+
+/* ===== Tables & Lists ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+table th, table td {
+  border: 1px solid #30363d;
+  padding: 8px;
+}
+table th {
+  background: #21262d;
+  color: #79c0ff;
+  text-align: left;
+}
+table tr:nth-child(even) {
+  background: #161b22;
+}
+
+ul.logs {
+  list-style: none;
+  padding: 0;
+}
+ul.logs li {
+  background: #161b22;
+  margin: 6px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+ul.logs li:hover {
+  background: #21262d;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== Charts ===== */
+.chart-container {
+  background: #161b22;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 0 5px rgba(88, 166, 255, 0.15);
+}

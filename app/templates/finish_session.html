@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finish Session</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✅ Finish Session</h1>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/session/start">Start Session</a>
+      <a href="/logs">Logs</a>
+      <a href="/resources">Resources</a>
+      <a href="/analytics">Analytics</a>
+    </div>
+
+    <!-- Finish Form -->
+    <div class="card">
+      <form action="/session/finish/{{ log.id }}" method="post" enctype="multipart/form-data">
+        <label>Completion %:</label>
+        <input type="number" name="completion_percent" value="100"><br><br>
+
+        <label>Outcome:</label>
+        <select name="outcome">
+          <option value="clear">Clear</option>
+          <option value="confused">Confused</option>
+          <option value="needs_review">Needs Review</option>
+          <option value="breakthrough">Breakthrough</option>
+          <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="notes_file">Upload Markdown Notes:</label><br>
+        <input type="file" name="notes_file" accept=".md"><br><br>
+
+        <button class="btn" type="submit">💾 Save Session</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
