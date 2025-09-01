@@ -1,7 +1,3 @@
-Here’s a **complete, copy-pasteable README** you can drop into the repo. It’s designed so that—even without this chat—someone (including future-you) can understand, run, and keep developing the app.
-
----
-
 # ⚡ Accountability Launcher — FastAPI MVP
 
 A focused, installable web app that helps you **choose a learning activity**, **launch the right resource** (video/book/notebook/Kaggle/VS Code), **track a timed session**, and **log results** with **XP, streaks, and analytics**. Notes can be uploaded as Markdown and viewed later.
