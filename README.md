@@ -79,7 +79,7 @@ accountability-app/
 
 ```bash
 # 1) Clone and enter
-git clone https://github.com/<your-username>/accountability-app.git
+git clone https://github.com/suvambh/accountability_app.git
 cd accountability-app
 
 # 2) Create venv
